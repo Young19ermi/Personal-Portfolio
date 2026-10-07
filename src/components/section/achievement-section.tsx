@@ -7,31 +7,41 @@ import {
   TimelineItem,
   TimelineConnectItem,
 } from "@/components/timeline";
+import { FlickeringGrid } from "../magicui/flickering-grid";
 
 export default function HackathonsSection() {
   return (
     <section id="hackathons" className="overflow-hidden">
       <div className="flex min-h-0 flex-col gap-y-8 w-full">
+        {/* <div className="absolute inset-0 top-0 left-0 right-0 h-1/2 rounded-xl overflow-hidden">
+          <FlickeringGrid
+            className="h-full w-full"
+            squareSize={1}
+            gridGap={1}
+            style={{
+              maskImage: "linear-gradient(to bottom, grey, transparent)",
+              WebkitMaskImage: "linear-gradient(to bottom, grey, transparent)",
+            }}
+          />
+        </div> */}
         <div className="flex flex-col gap-y-4 items-center justify-center">
           <div className="flex items-center w-full">
             <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
             <div className="border bg-primary z-10 rounded-xl px-4 py-1">
               <span className="text-background text-sm font-medium">
-                Hackathons
+                Achievements
               </span>
             </div>
             <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
           </div>
           <div className="flex flex-col gap-y-3 items-center justify-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-              I like building things
+              Milestones that moved the needle
             </h2>
             <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
-              During my time in university, I attended {DATA.hackathons.length}+
-              hackathons. People from around the country would come together and
-              build incredible things in 2-3 days. It was eye-opening to see the
-              endless possibilities brought to life by a group of motivated and
-              passionate individuals.
+              I measure growth in problems solved, products shipped and rooms
+              led. From 800+ algorithmic challenges to Africa's biggest AI
+              hackathon, here are the moments that shaped how I build.
             </p>
           </div>
         </div>
@@ -82,10 +92,9 @@ export default function HackathonsSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {/* <Badge className="flex items-center gap-1.5 text-xs bg-primary text-primary-foreground">
-                          {link.icon}
-                          {link.title}
-                        </Badge> */}
+                        <Badge className="flex items-center gap-1.5 text-xs bg-primary text-primary-foreground">
+                          {link.types}
+                        </Badge>
                       </Link>
                     ))}
                   </div>
